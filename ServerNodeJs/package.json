@@ -4,7 +4,8 @@
   "description": "Server",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "dev": "nodemon server.js", 
+    "start": "node ." 
   },
   "author": "Irene Koech",
   "license": "MIT",
