@@ -8,12 +8,14 @@ const Title  = 'Total bookings and votes'
 //Get Totals 
 router.get('/', async (req, res) =>{
     try {
-        const totals = await Totals.find()
+        var totals = await Totals.find({ title: Title }, a => {
+
+        })
         if (totals.length == 0) {
             await init(res)
         }
         else {
-            res.json(totals)
+            res.json(totals[0])
         }
     } catch(err){
         res.json({ message: err })
