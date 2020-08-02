@@ -3,7 +3,6 @@ const app = express()
 const mongoose = require('mongoose')
 const cors = require('cors')
 var PORT =process.env.PORT || 3000
-var DB_URL = process.env.MONGODB_URI || 'mongodb://localhost/posts'
 require('dotenv/config')
 
 //Middlewares
@@ -19,7 +18,7 @@ app.get('/', (req, res) =>{
 })
 
 //Connect to database
-mongoose.connect(DB_URL,
+mongoose.connect(process.env.DB_CONNECTION,
 { useNewUrlParser: true, useUnifiedTopology: true,  useFindAndModify: false },
  () => console.log('connected to DB!'))
 
